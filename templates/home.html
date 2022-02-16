@@ -12,6 +12,7 @@
 <body>
     <h1>Persons</h1>
 
+    <a href="{{ url_for('new_person') }}">add new person</a>
     <table id="customers">
         <tr>
             <th>Id</th>
@@ -25,6 +26,9 @@
             <td>{{ person["name"] }}</td>
             <td>{{ person["age"] }}</td>
             <td>{{ person["salary"] }}</td>
+            <td><a href="{{ url_for('show_person', id=person['id']) }}">show</a></td>
+            <td><a href="{{ url_for('update_person', id=person['id']) }}">update</a></td>
+            <td><a href="{{ url_for('delete_person', id=person['id']) }}">delete</a></td>
         </tr>
         {% endfor %}
     </table>

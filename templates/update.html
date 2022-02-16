@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>update person</title>
+</head>
+
+<body>
+    <h1>update person</h1>
+
+    <form action="{{ url_for('update_person', id=person['id']) }}" method="post">
+        <label for="name">
+            <input type="text" id="name" name="name" placeholder="name..." value="{{ person['name'] }}">
+        </label>
+        <label for="age">
+            <input type="text" id="age" name="age" placeholder="age..." value="{{ person['age'] }}">
+        </label>
+        <label for="salary">
+            <input type="text" id="salary" name="salary" placeholder="salary..." value="{{ person['salary'] }}">
+        </label>
+        <input type="submit" value="add">
+    </form>
+</body>
+
+</html>
