@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>new person</title>
+</head>
+
+<body>
+    <h1>new person</h1>
+
+    <form action="{{ url_for('insert_person') }}" method="post">
+        <label for="name">
+            <input type="text" id="name" name="name" placeholder="name...">
+        </label>
+        <label for="age">
+            <input type="text" id="age" age="age" placeholder="age...">
+        </label>
+        <label for="salary">
+            <input type="text" id="salary" salary="salary" placeholder="salary...">
+        </label>
+        <input type="submit" value="add">
+    </form>
+</body>
+
+</html>

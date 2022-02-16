@@ -19,16 +19,14 @@
             <th>Age</th>
             <th>Salary</th>
         </tr>
+        {% for person in persons %}
         <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
+            <td>{{ person["id"] }}</td>
+            <td>{{ person["name"] }}</td>
+            <td>{{ person["age"] }}</td>
+            <td>{{ person["salary"] }}</td>
         </tr>
-        <tr>
-            <td>Berglunds snabbköp</td>
-            <td>Christina Berglund</td>
-            <td>Sweden</td>
-        </tr>
+        {% endfor %}
     </table>
 </body>
 
