@@ -64,5 +64,16 @@ def update_person(id):
         return redirect(url_for("home"))
 
 
+@app.route("/card/<nameAuth>/<int:idAuth>", methods=["GET", "POST"])
+def card(nameAuth, idAuth):
+    if request.method == "GET":
+        print(nameAuth, idAuth)
+        return render_template("card.html", nameAuth=nameAuth, idAuth=idAuth)
+    elif request.method == "POST":
+        name = request.form.get("name")
+        phone = request.form.get("phone")
+        return f"{name} {phone} hey que cool gracias por el post, buena onda {nameAuth} {idAuth}"
+
+
 if __name__ == "__main__":
     app.run(debug=True)
