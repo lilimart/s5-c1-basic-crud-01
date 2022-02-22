@@ -1,17 +1,16 @@
 import pymysql.cursors
 
 
-def createConnectionDB() -> any:
+def createConnectionDB():
     connection = pymysql.connect(
-        host="localhost",
+        host="127.0.0.1",
         user="root",
-        password="root",
+        password="12345",
         database="personinfodb",
         port=3306,
         cursorclass=pymysql.cursors.DictCursor,
     )
     return connection
-
 
 """ crud """
 # create
