@@ -1,34 +1,37 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Persons{% endblock title %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+</head>
 
-{% block content %}
-<h1>Persons</h1>
+<body>
+    <h1>Persons</h1>
 
-<a href="{{ url_for('new_person') }}">add new person</a>
-<table id="customers">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Salary</th>
-    </tr>
-    {% for person in persons %}
-    <tr>
-        <td>{{ person["id"] }}</td>
-        <td>{{ person["name"] }}</td>
-        <td>{{ person["age"] }}</td>
-        <td>{{ person["salary"] }}</td>
-        <td><a href="{{ url_for('show_person', id=person['id']) }}">show</a></td>
-        <td><a href="{{ url_for('update_person', id=person['id']) }}">update</a></td>
-        <td><a href="{{ url_for('delete_person', id=person['id']) }}">delete</a></td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock content %}
+    <a href="{{ url_for('new_person') }}">add new person</a>
+    <table id="customers">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+        {% for person in persons %}
+        <tr>
+            <td>{{ person["id"] }}</td>
+            <td>{{ person["name"] }}</td>
+            <td>{{ person["age"] }}</td>
+            <td>{{ person["salary"] }}</td>
+            <td><a href="{{ url_for('show_person', id=person['id']) }}">show</a></td>
+            <td><a href="{{ url_for('update_person', id=person['id']) }}">update</a></td>
+            <td><a href="{{ url_for('delete_person', id=person['id']) }}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
 
-{% block customScripts %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
-    crossorigin="anonymous"></script>
-{% endblock customScripts %}
+</html>
